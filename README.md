@@ -14,6 +14,12 @@ A secure token wallet implementation for the Internet Computer Protocol (ICP) bl
 ## Prerequisites
 
 - Rust (latest stable version)
+Install Rust:
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup target add wasm32-unknown-unknown
+```
 - DFX (ICP SDK)
 - Node.js and npm (for local development)
 
@@ -44,6 +50,13 @@ dfx start --background
 dfx deploy
 ```
 
+## Managing Identities
+Create test identities:
+```bash
+dfx identity new alice
+dfx identity use alice
+```
+
 ## Testing
 
 Run the test suite:
@@ -51,6 +64,11 @@ Run the test suite:
 ```bash
 cargo test
 ```
+
+## Common Issues
+- "Command not found": Ensure DFX is in PATH
+- "Unauthorized": Use correct identity
+- "Insufficient balance": Mint tokens first
 
 ## Smart Contract Functions
 
@@ -105,15 +123,3 @@ The wallet implements comprehensive error handling:
 - Insufficient balance checks
 - Invalid transfer amount validation
 - Authorization checks for privileged operations
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-MIT License
