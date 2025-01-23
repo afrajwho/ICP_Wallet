@@ -3,7 +3,7 @@
 use candid::{CandidType, Deserialize, Principal};
 use ic_cdk_macros::*;
 use std::collections::HashMap;
-use ic_cdk::storage;
+//use ic_cdk::storage;
 
 #[derive(CandidType, Deserialize, Default)]
 struct TokenWallet {
